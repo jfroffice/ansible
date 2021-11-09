@@ -1,0 +1,10 @@
+- name: Install n
+  npm:
+    name: n
+    global: true
+- name: Node
+  shell: n 15
+- name: Yarn
+  shell: npm install -g yarn
+- name: Nodemon
+  shell: npm install -g nodemon

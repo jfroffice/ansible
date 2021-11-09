@@ -1,0 +1,9 @@
+# clone down the dotfiles and recurse the submodules (which are private)
+- name: Cloning PPA-DB
+  git:
+    repo: "git@github.com:jfroffice/ppa-db.git"
+    dest: "/root/ppa-db"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master

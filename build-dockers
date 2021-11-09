@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker build . -t nice-start
+docker run --expose 7002 --rm -it nice-start bash

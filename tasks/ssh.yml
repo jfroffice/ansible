@@ -1,0 +1,22 @@
+- name: Ensure .ssh directory exists.
+  file:
+    dest: "/root/.ssh"
+    mode: 0700
+    state: directory
+- name: Add .ssh directory to user 'febo'
+  file:
+    path: "/root/.ssh"
+    state: directory
+    mode: 0700
+- name: Copy ssh key
+  copy:
+    src: "./.ssh/id_rsa"
+    dest: "/root/.ssh/id_rsa"
+    mode: 0600
+- name: Copy dotfiles directory
+  copy:
+    src: "./dotfiles/"
+    dest: "/root/dotfiles/"
+- name: Run stow for dotfiles
+  shell: cd ~/dotfiles/bash && stow . --target ~
+

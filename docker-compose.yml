@@ -1,0 +1,8 @@
+version: "3"
+services:
+  ppadb:
+    restart: unless-stopped
+    build: .
+    container_name: "ppa-db"
+    ports:
+    - "127.0.0.1:7002:7002"
